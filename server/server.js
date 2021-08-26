@@ -1,6 +1,5 @@
 const http = require('http');
 const app = require('./app');
-const socketio = require('socket.io');
 
 const normalizePort = val => {
   const port = parseInt(val, 10);
