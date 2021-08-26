@@ -28,4 +28,10 @@ db.sequelize = sequelize;
 db.user = require("./user.model")(sequelize, DataTypes);
 db.admin = require("./admin.model")(sequelize, DataTypes);
 
+db.expense = require("./expense.model")(sequelize, DataTypes);
+
+
+/** One To Many between expense and user*/
+db.expense.belongsTo(db.user, { foreignKey: "userId" });
+
 module.exports = db;
