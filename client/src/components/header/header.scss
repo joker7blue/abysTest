@@ -1,0 +1,25 @@
+.header {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px 50px;
+
+    .menu {
+
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        /* width: 30%; */
+
+        & > a {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .option {
+            display: inline-block;
+            cursor: pointer;
+        }
+    }
+}
