@@ -28,8 +28,6 @@ const login = async (req, res) => {
 
         throw new Error("Unable to login this user");
       }
-
-      
     }
   } catch (error) {
     return res.status(401).json({ message: "UnReconized user", error });

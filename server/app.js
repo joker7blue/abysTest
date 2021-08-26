@@ -2,7 +2,10 @@ const express = require("express");
 const db = require("./models");
 
 const authUserRoutes = require("./routes/authUserRoutes");
-const authAdminRoutes = require("./routes/authAdminRoutes");
+const authAdminRoutes = require("./routes/admin/authAdminRoutes");
+
+const expensesRoutes = require("./routes/expensesRoutes");
+const authExpensesRoutes = require("./routes/admin/expensesRoutes");
 
 // Load .env variables to be accessed through process.env
 require("dotenv").config();
@@ -28,5 +31,7 @@ app.use(express.json());
 app.use("/api/auth", authUserRoutes);
 app.use("/api/auth/admin", authAdminRoutes);
 
+app.use("/api/expenses", expensesRoutes);
+app.use("/api/auth/expenses", authExpensesRoutes);
 
 module.exports = app;
