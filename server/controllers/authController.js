@@ -22,7 +22,7 @@ const login = async (req, res) => {
       if (resultComparePassword) {
         
         const tokenExpiresIn = remberMe ? '72h' : '24h';
-        const token = jwt.sign({ userId: user.id, userRole: user.roles[0].name }, process.env.SECRET, { expiresIn: tokenExpiresIn });
+        const token = jwt.sign({ userId: user.id, userRole: 'USER' }, process.env.SECRET, { expiresIn: tokenExpiresIn });
         return res.status(200).json({ message: "Login succeessfuy", token, roles: user.roles, userId: user.id, userCountry: user.country });
       }else{
 
